@@ -7,7 +7,7 @@ export const Container = styled.div`
   min-height: 31.75rem;
 `;
 export const SectionOne = styled.div`
-  background: green;
+  background: #a1a5a8;
   width: 35%;
 `;
 export const SectionTwo = styled.div`

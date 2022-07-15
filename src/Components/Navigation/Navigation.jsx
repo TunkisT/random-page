@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
 
 function Navigation(props) {
-  return <S.Navigation>Navigation bar</S.Navigation>;
+  return (
+    <div>
+      <S.Navigation>
+        <S.Navigate to='/'>new user</S.Navigate>
+        <S.Navigate to='/categories'>new category</S.Navigate>
+      </S.Navigation>
+    </div>
+  );
 }
 
 Navigation.propTypes = {};
