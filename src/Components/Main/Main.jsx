@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Main.style';
 
-function Main(props) {
-  return <S.Main>Main data</S.Main>;
+function Main({ children }) {
+  return <S.Main>{children}</S.Main>;
 }
 
 Main.propTypes = {};
