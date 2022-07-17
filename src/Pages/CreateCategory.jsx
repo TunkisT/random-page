@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Input/Input';
 import Main from '../Components/Main/Main';
+import AuthContext from '../store/authContext';
 
 function CreateCategory() {
+  const authCtx = useContext(AuthContext);
+  const [category, setCategory] = useState('');
+
+  function formHandler(e) {
+    e.preventDefault();
+    authCtx.categoryData.push(category);
+    console.log('authCtx ===', authCtx);
+    
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    alert('Category created!');
+  }
+
   return (
     <Main>
       <h2>Create new category</h2>
-      <form>
+      <form onSubmit={formHandler}>
         <Input
           name='category'
-          labelText='category'
-          type='category'
+          type='text'
           placeholder='Category'
+          handleChange={(category) => setCategory(category)}
         />
+        <Button type='submit'>Submit</Button>
       </form>
-      <Button type='submit'>Submit</Button>
     </Main>
   );
 }
