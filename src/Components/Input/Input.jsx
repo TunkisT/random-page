@@ -16,6 +16,7 @@ function Input({ name, type, placeholder, handleChange }) {
         id={name}
         placeholder={placeholder}
         value={value}
+        required
         onChange={onChange}
       />
     </S.Form>
@@ -23,9 +24,9 @@ function Input({ name, type, placeholder, handleChange }) {
 }
 
 Input.propTypes = {
-  name: PropTypes.string.isRequired,
-  type: PropTypes.node.isRequired,
-  placeholder: PropTypes.node.isRequired,
+  // name: PropTypes.string.isRequired,
+  // type: PropTypes.node.isRequired,
+  // placeholder: PropTypes.node.isRequired,
 };
 
 export default Input;
