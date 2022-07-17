@@ -9,15 +9,21 @@ function NewUser() {
   function formHandler(e) {
     e.preventDefault();
     console.log('userDetails ===', userDetails);
+
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    alert('User created!');
   }
+
   return (
     <Main>
       <h2>Create new user</h2>
       <form onSubmit={formHandler}>
         <Input
           name='password'
-          labelText='Password'
           type='password'
+          initialValue=''
           placeholder='Password'
           handleChange={(password) => setUserDetails({ ...userDetails, password })}
         />
@@ -28,7 +34,6 @@ function NewUser() {
         )}
         <Input
           name='name'
-          labelText='Name'
           type='text'
           placeholder='Name'
           handleChange={(name) => setUserDetails({ ...userDetails, name })}
@@ -36,7 +41,6 @@ function NewUser() {
         {userDetails.name && userDetails.name.length < 3 ? <p>Name to short</p> : ''}
         <Input
           name='last-name'
-          labelText='last-name'
           type='text'
           placeholder='Last name'
           handleChange={(lastName) => setUserDetails({ ...userDetails, lastName })}
@@ -48,14 +52,12 @@ function NewUser() {
         )}
         <Input
           name='email'
-          labelText='Email'
           type='email'
           placeholder='Email'
           handleChange={(email) => setUserDetails({ ...userDetails, email })}
         />
         <Input
           name='age'
-          labelText='age'
           type='text'
           placeholder='Age'
           handleChange={(age) => setUserDetails({ ...userDetails, age })}
@@ -67,7 +69,6 @@ function NewUser() {
         )}
         <Input
           name='gender'
-          labelText='gender'
           type='text'
           placeholder='Gender(male/female)'
           handleChange={(gender) => setUserDetails({ ...userDetails, gender })}
@@ -81,7 +82,6 @@ function NewUser() {
         )}
         <Input
           name='category'
-          labelText='category'
           type='text'
           placeholder='Category'
           handleChange={(category) => setUserDetails({ ...userDetails, category })}
