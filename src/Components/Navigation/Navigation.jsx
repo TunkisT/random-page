@@ -1,18 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
 
-function Navigation(props) {
-  return (
-    <div>
-      <S.Navigation>
-        <S.Navigate to='/'>new user</S.Navigate>
-        <S.Navigate to='/categories'>new category</S.Navigate>
-      </S.Navigation>
-    </div>
-  );
+function Navigation({ link, title }) {
+  return <S.Navigate to={link}>{title}</S.Navigate>;
 }
 
-Navigation.propTypes = {};
+Navigation.propTypes = {
+  link: PropTypes.node.isRequired,
+  title: PropTypes.node.isRequired,
+};
 
 export default Navigation;

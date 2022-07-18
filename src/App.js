@@ -1,3 +1,4 @@
+import { useContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Container from './Components/Container/Container';
@@ -8,17 +9,25 @@ import NewUser from './Pages/NewUser';
 import AuthContext from './store/authContext';
 
 function App() {
-  const ctxValue = {
-    categoryData: [],
-  };
+  const authCtx = useContext(AuthContext);
+  const [result, setResult] = useState(authCtx.listData);
+
+  function getData(obj) {
+    setResult((prevState) => [...prevState, obj]);
+    authCtx.listData = [...authCtx.listData, obj];
+  }
+
   return (
-    <AuthContext.Provider value={ctxValue}>
+    <AuthContext.Provider value={authCtx}>
       <div className='App'>
         <Header></Header>
         <Container>
           <Routes>
             <Route path='/' element={<NewUser />} />
-            <Route path='/categories' element={<CreateCategory />} />
+            <Route
+              path='/categories'
+              element={<CreateCategory getData={getData} />}
+            />
           </Routes>
         </Container>
         <Footer></Footer>

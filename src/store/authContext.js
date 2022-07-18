@@ -1,7 +1,16 @@
 import { createContext } from 'react';
 
 const AuthContext = createContext({
-  categoryData: [],
+  listData: [
+    {
+      link: '/',
+      title: 'New user',
+    },
+    {
+      link: '/categories',
+      title: 'New category',
+    },
+  ],
 });
 
 AuthContext.displayName = 'AuthContext';

@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Navigation = styled.nav`
-  margin: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-`;
 export const Navigate = styled(Link)`
   @media screen and (max-width: 768px) {
     flex: 1 3rem;

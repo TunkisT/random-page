@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Container.style';
-import Navigation from '../Navigation/Navigation';
 import Main from '../Main/Main';
+import NavigationList from '../NavigationList/NavigationList';
 
 function Container({ children }) {
   return (
     <S.Container>
       <S.SectionOne>
-        <Navigation></Navigation>
+        <NavigationList />
       </S.SectionOne>
       <S.SectionTwo>
         {children}
-        <Main></Main>
+        <Main />
       </S.SectionTwo>
     </S.Container>
   );
