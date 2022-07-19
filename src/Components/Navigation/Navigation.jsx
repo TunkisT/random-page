@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
 
-function Navigation({ link, title, color }) {
+function Navigation({ link, title, color, children }) {
   return (
-    <S.Navigate color={color} to={link}>
-      {title}
-    </S.Navigate>
+    <>
+      <S.Navigate color={color} to={link}>
+        {title}
+      </S.Navigate>
+      <h5>{children}</h5>
+    </>
   );
 }
 

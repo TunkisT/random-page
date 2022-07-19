@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './NavigationList.style';
 import Navigation from '../Navigation/Navigation';
 import AuthContext from '../../store/authContext';
+import SubCategory from '../SubCategory/SubCategory';
 
 const pageData = [
   {
@@ -17,6 +18,7 @@ const pageData = [
 
 function NavigationList(props) {
   const authCtx = useContext(AuthContext);
+  const [result, setResult] = useState(authCtx.listData);
 
   return (
     <S.Navigation>
@@ -29,8 +31,15 @@ function NavigationList(props) {
           key={obj.title}
           link={obj.link}
           title={obj.title}
-        />
+        >
+          {obj.subcategory.map((item) => (
+            <SubCategory link={`${obj.link}/${item}`} key={item}>
+              {item}
+            </SubCategory>
+          ))}
+        </Navigation>
       ))}
+      {}
     </S.Navigation>
   );
 }

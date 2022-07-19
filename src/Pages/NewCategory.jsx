@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Input/Input';
 import Main from '../Components/Main/Main';
@@ -9,23 +9,20 @@ function NewCategory({ title }) {
   const [subcategory, setSubcategory] = useState([]);
   const [subArr, setSubArr] = useState(subcategory);
 
+  useEffect(() => {
+    addToState();
+  }, [subArr]);
+
   function formHandler(e) {
     e.preventDefault();
-
     setSubArr((prevState) => [...prevState, subcategory]);
-
-    console.log('subArr ===', subArr);
-    console.log('authCtx.listData ===', authCtx.listData);
-
-    addToState();
-    // Array.from(document.querySelectorAll('input')).forEach(
-    //   (input) => (input.value = '')
-    // );
-    // alert('Subcategory created!');
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    alert('Subcategory created!');
   }
 
   function addToState() {
-    console.log('subArr funcion ===', subArr);
     const result = authCtx.listData.find((obj) => obj.title === title);
     result.subcategory = subArr;
   }
