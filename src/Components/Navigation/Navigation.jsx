@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
 
-function Navigation({ link, title }) {
-  return <S.Navigate to={link}>{title}</S.Navigate>;
+function Navigation({ link, title, color }) {
+  return (
+    <S.Navigate color={color} to={link}>
+      {title}
+    </S.Navigate>
+  );
 }
 
 Navigation.propTypes = {

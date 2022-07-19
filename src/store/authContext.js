@@ -3,12 +3,12 @@ import { createContext } from 'react';
 const AuthContext = createContext({
   listData: [
     {
-      link: '/',
-      title: 'New user',
+      link: '/Server',
+      title: 'Server',
     },
     {
-      link: '/categories',
-      title: 'New category',
+      link: '/web',
+      title: 'Web',
     },
   ],
 });

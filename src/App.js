@@ -15,6 +15,7 @@ function App() {
   function getData(obj) {
     setResult((prevState) => [...prevState, obj]);
     authCtx.listData = [...authCtx.listData, obj];
+    console.log('authCtx.listData ===', authCtx.listData);
   }
 
   return (

@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Input/Input';
 import Main from '../Components/Main/Main';
+import Select from '../Components/Select/Select';
+import AuthContext from '../store/authContext';
 
 function NewUser() {
   const [userDetails, setUserDetails] = useState('');
+  const authCtx = useContext(AuthContext);
 
   function formHandler(e) {
     e.preventDefault();
@@ -15,6 +18,17 @@ function NewUser() {
     );
     alert('User created!');
   }
+
+  const genderData = [
+    {
+      value: 'Male',
+      title: 'Male',
+    },
+    {
+      value: 'Female',
+      title: 'Female',
+    },
+  ];
 
   return (
     <Main>
@@ -67,30 +81,16 @@ function NewUser() {
         ) : (
           ''
         )}
-        <Input
-          name='gender'
-          type='text'
-          placeholder='Gender(male/female)'
+        <Select
+          selectList={genderData}
+          placeholder='Select gender'
           handleChange={(gender) => setUserDetails({ ...userDetails, gender })}
         />
-        {userDetails?.gender &&
-        userDetails.gender !== 'male' &&
-        userDetails.gender !== 'female' ? (
-          <p>Wrong gender entered</p>
-        ) : (
-          ''
-        )}
-        <Input
-          name='category'
-          type='text'
-          placeholder='Category'
+        <Select
+          selectList={authCtx.listData}
+          placeholder='Select category'
           handleChange={(category) => setUserDetails({ ...userDetails, category })}
         />
-        {userDetails.category && userDetails.category.length < 4 ? (
-          <p>Category name to short</p>
-        ) : (
-          ''
-        )}
         <Button type='submit'>Submit</Button>
       </form>
     </Main>
