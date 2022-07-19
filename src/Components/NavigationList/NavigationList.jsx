@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './NavigationList.style';
 import Navigation from '../Navigation/Navigation';
@@ -18,7 +18,7 @@ const pageData = [
 
 function NavigationList(props) {
   const authCtx = useContext(AuthContext);
-  const [result, setResult] = useState(authCtx.listData);
+  // console.log('authCtxk NAVI ===', authCtx.listData);
 
   return (
     <S.Navigation>

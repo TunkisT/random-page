@@ -6,12 +6,12 @@ const AuthContext = createContext({
     {
       link: '/server',
       title: 'Server',
-      subcategory: ['one', 'two'],
+      subcategory: [],
     },
     {
       link: '/web',
       title: 'Web',
-      subcategory: ['three', 'four'],
+      subcategory: [],
     },
   ],
 });

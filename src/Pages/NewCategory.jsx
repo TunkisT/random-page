@@ -4,7 +4,7 @@ import Input from '../Components/Input/Input';
 import Main from '../Components/Main/Main';
 import AuthContext from '../store/authContext';
 
-function NewCategory({ title }) {
+function NewCategory({ title, getSubData }) {
   const authCtx = useContext(AuthContext);
   const [subcategory, setSubcategory] = useState([]);
   const [subArr, setSubArr] = useState(subcategory);
@@ -25,6 +25,8 @@ function NewCategory({ title }) {
   function addToState() {
     const result = authCtx.listData.find((obj) => obj.title === title);
     result.subcategory = subArr;
+    console.log('subArr ===', subArr);
+    // getSubData();
   }
 
   return (

@@ -12,6 +12,7 @@ function CreateCategory({ getData }) {
     getData({
       link: category,
       title: category,
+      subcategory: [],
     });
 
     Array.from(document.querySelectorAll('input')).forEach(

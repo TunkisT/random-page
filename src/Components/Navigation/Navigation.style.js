@@ -11,10 +11,9 @@ export const Navigate = styled(Link)`
   color: grey;
   display: block;
   font-size: 1rem;
-  font-weight: 400;
   letter-spacing: 1px;
-  margin: 0.2rem;
-  padding: 0.6rem 2rem;
+  margin: 0.6rem 0.2rem;
+  padding: 0.3rem 2rem;
   text-align: center;
   text-decoration: 0;
   text-transform: uppercase;

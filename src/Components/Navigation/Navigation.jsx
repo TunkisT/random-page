@@ -7,7 +7,7 @@ function Navigation({ link, title, color, children }) {
       <S.Navigate color={color} to={link}>
         {title}
       </S.Navigate>
-      <h5>{children}</h5>
+      <p>{children}</p>
     </>
   );
 }
