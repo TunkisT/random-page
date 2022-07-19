@@ -5,6 +5,17 @@ import Main from '../Components/Main/Main';
 import Select from '../Components/Select/Select';
 import AuthContext from '../store/authContext';
 
+const genderData = [
+  {
+    value: 'Male',
+    title: 'Male',
+  },
+  {
+    value: 'Female',
+    title: 'Female',
+  },
+];
+
 function NewUser() {
   const [userDetails, setUserDetails] = useState('');
   const authCtx = useContext(AuthContext);
@@ -12,23 +23,14 @@ function NewUser() {
   function formHandler(e) {
     e.preventDefault();
     console.log('userDetails ===', userDetails);
+    authCtx.usersData = [...authCtx.usersData, userDetails];
+    console.log('authCtx.usersData ===', authCtx.usersData);
 
     Array.from(document.querySelectorAll('input')).forEach(
       (input) => (input.value = '')
     );
     alert('User created!');
   }
-
-  const genderData = [
-    {
-      value: 'Male',
-      title: 'Male',
-    },
-    {
-      value: 'Female',
-      title: 'Female',
-    },
-  ];
 
   return (
     <Main>

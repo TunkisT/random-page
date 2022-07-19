@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 
 const AuthContext = createContext({
+  usersData: [],
   listData: [
     {
       link: '/Server',

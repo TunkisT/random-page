@@ -24,7 +24,12 @@ function NavigationList(props) {
         <Navigation color='#ede' key={obj.title} link={obj.link} title={obj.title} />
       ))}
       {authCtx.listData.map((obj) => (
-        <Navigation key={obj.title} link={obj.link} title={obj.title} />
+        <Navigation
+          color='#e7a1e7'
+          key={obj.title}
+          link={obj.link}
+          title={obj.title}
+        />
       ))}
     </S.Navigation>
   );

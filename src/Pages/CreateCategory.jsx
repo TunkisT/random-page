@@ -14,10 +14,10 @@ function CreateCategory({ getData }) {
       title: category,
     });
 
-    // Array.from(document.querySelectorAll('input')).forEach(
-    //   (input) => (input.value = '')
-    // );
-    // alert('Category created!');
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    alert('Category created!');
   }
 
   return (
@@ -30,7 +30,7 @@ function CreateCategory({ getData }) {
           placeholder='Category'
           handleChange={(category) => setCategory(category)}
         />
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>create Category</Button>
       </form>
     </Main>
   );

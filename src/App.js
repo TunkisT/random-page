@@ -5,6 +5,7 @@ import Container from './Components/Container/Container';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import CreateCategory from './Pages/CreateCategory';
+import NewCategory from './Pages/NewCategory';
 import NewUser from './Pages/NewUser';
 import AuthContext from './store/authContext';
 
@@ -24,6 +25,13 @@ function App() {
         <Header></Header>
         <Container>
           <Routes>
+            {authCtx.listData.map((obj) => (
+              <Route
+                key={obj.title}
+                path={obj.link}
+                element={<NewCategory title={obj.title} />}
+              />
+            ))}
             <Route path='/' element={<NewUser />} />
             <Route
               path='/categories'

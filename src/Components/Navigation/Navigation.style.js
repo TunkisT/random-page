@@ -9,6 +9,7 @@ export const Navigate = styled(Link)`
   border-radius: 0.3rem;
   border: 0;
   color: grey;
+  display: block;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
