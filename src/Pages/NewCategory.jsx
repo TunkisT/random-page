@@ -8,6 +8,8 @@ function NewCategory({ title, getSubData }) {
   const authCtx = useContext(AuthContext);
   const [subcategory, setSubcategory] = useState([]);
 
+  const data = authCtx.usersData.filter((item) => item.category === title);
+
   function formHandler(e) {
     e.preventDefault();
     addToState();
@@ -35,6 +37,16 @@ function NewCategory({ title, getSubData }) {
         />
         <Button type='submit'>create Subcategory</Button>
       </form>
+      {data.length === 0 ? (
+        <h2>No users in this category</h2>
+      ) : (
+        <h2>Active users ({data.length})</h2>
+      )}
+      {data.map((obj) => (
+        <p style={{ textTransform: ' capitalize  ' }} key={obj.password}>
+          {obj.name} {obj.lastName}
+        </p>
+      ))}
     </Main>
   );
 }
