@@ -8,6 +8,7 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
     display: block;
     min-height: 31.75rem;
+    margin: 0;
   }
 `;
 export const SectionOne = styled.div`

@@ -5,4 +5,7 @@ export const Header = styled.header`
   margin: 1rem;
   padding: 1rem;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    margin: 0.1rem 0;
+  }
 `;
