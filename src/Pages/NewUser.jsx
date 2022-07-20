@@ -22,9 +22,7 @@ function NewUser() {
 
   function formHandler(e) {
     e.preventDefault();
-    console.log('userDetails ===', userDetails);
     authCtx.usersData = [...authCtx.usersData, userDetails];
-    console.log('authCtx.usersData ===', authCtx.usersData);
 
     Array.from(document.querySelectorAll('input')).forEach(
       (input) => (input.value = '')
