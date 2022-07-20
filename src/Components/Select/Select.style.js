@@ -6,7 +6,7 @@ export const Select = styled.select`
   border: none;
   box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
   color: black;
-  display: inline-block;
+  display: block;
   font-size: 13px;
   margin: 5px 20px 15px 20px;
   padding: 10px 95px;
