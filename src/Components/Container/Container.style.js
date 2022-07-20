@@ -22,6 +22,7 @@ export const SectionOne = styled.div`
 export const SectionTwo = styled.div`
   background: #eee;
   width: 65%;
+  text-align: center;
   @media screen and (max-width: 768px) {
     width: 100%;
     min-height: 10rem;

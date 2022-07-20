@@ -12,5 +12,4 @@ export const Select = styled.select`
   padding: 10px 95px;
   text-align: center;
   text-decoration: none;
-  max-width: 16.2rem;
 `;
