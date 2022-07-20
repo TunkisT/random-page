@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../Components/Button/Button';
 import Input from '../Components/Input/Input';
 import Main from '../Components/Main/Main';
@@ -7,15 +7,10 @@ import AuthContext from '../store/authContext';
 function NewCategory({ title, getSubData }) {
   const authCtx = useContext(AuthContext);
   const [subcategory, setSubcategory] = useState([]);
-  const [subArr, setSubArr] = useState(subcategory);
-
-  useEffect(() => {
-    addToState();
-  }, [subArr]);
 
   function formHandler(e) {
     e.preventDefault();
-    setSubArr((prevState) => [...prevState, subcategory]);
+    addToState();
     Array.from(document.querySelectorAll('input')).forEach(
       (input) => (input.value = '')
     );
@@ -24,14 +19,13 @@ function NewCategory({ title, getSubData }) {
 
   function addToState() {
     const result = authCtx.listData.find((obj) => obj.title === title);
-    result.subcategory = subArr;
-    console.log('subArr ===', subArr);
-    // getSubData();
+    result.subcategory.push(subcategory);
+    getSubData(subcategory);
   }
 
   return (
     <Main>
-      <h2>{title} category</h2>
+      <h2 style={{ textTransform: ' uppercase ' }}>{title} category</h2>
       <form onSubmit={formHandler}>
         <Input
           name='category'

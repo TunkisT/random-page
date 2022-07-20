@@ -14,17 +14,15 @@ function App() {
   const authCtx = useContext(AuthContext);
   const [result, setResult] = useState(authCtx.listData);
   const [subResult, setSubResult] = useState('');
+  console.log('authCtx ===', authCtx);
 
   function getData(obj) {
     setResult((prevState) => [...prevState, obj]);
     authCtx.listData = [...authCtx.listData, obj];
-    console.log('authCtx.listData ===', authCtx.listData);
   }
 
   function getSubData(obj) {
     setSubResult((prevState) => [...prevState, obj]);
-    // authCtx.listData = [...authCtx.listData, obj];
-    console.log('authCtx.listData ===', authCtx.listData);
   }
 
   return (

@@ -18,7 +18,6 @@ const pageData = [
 
 function NavigationList(props) {
   const authCtx = useContext(AuthContext);
-  // console.log('authCtxk NAVI ===', authCtx.listData);
 
   return (
     <S.Navigation>

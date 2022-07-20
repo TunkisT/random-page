@@ -7,7 +7,7 @@ function NewSubCategory({ title }) {
 
   return (
     <Main>
-      <h2>{title} subcategory</h2>
+      <h2 style={{ textTransform: ' uppercase ' }}>{title} subcategory</h2>
     </Main>
   );
 }
