@@ -14,7 +14,6 @@ function App() {
   const authCtx = useContext(AuthContext);
   const [result, setResult] = useState(authCtx.listData);
   const [subResult, setSubResult] = useState('');
-  console.log('authCtx ===', authCtx);
 
   function getData(obj) {
     setResult((prevState) => [...prevState, obj]);

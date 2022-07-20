@@ -9,7 +9,7 @@ export const Select = styled.select`
   display: inline-block;
   font-size: 13px;
   margin: 5px 20px 15px 20px;
-  padding: 10px 97px;
+  padding: 10px 95px;
   text-align: center;
   text-decoration: none;
 `;

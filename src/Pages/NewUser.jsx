@@ -85,12 +85,12 @@ function NewUser() {
         )}
         <Select
           selectList={genderData}
-          placeholder='Select gender'
+          placeholder='Gender'
           handleChange={(gender) => setUserDetails({ ...userDetails, gender })}
         />
         <Select
           selectList={authCtx.listData}
-          placeholder='Select category'
+          placeholder='Category'
           handleChange={(category) => setUserDetails({ ...userDetails, category })}
         />
         <Button type='submit'>Submit</Button>

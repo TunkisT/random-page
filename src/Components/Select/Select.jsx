@@ -8,7 +8,8 @@ function Select({ selectList, handleChange, placeholder }) {
   };
 
   return (
-    <S.Select required onChange={onChange} placeholder={placeholder}>
+    <S.Select  required onChange={onChange} placeholder={placeholder}>
+      <option hidden>{placeholder}</option>
       {selectList.map((data) => (
         <option key={data.title} value={data.value}>
           {data.title}
