@@ -72,7 +72,7 @@ function NewUser() {
         />
         <Input
           name='age'
-          type='text'
+          type='number'
           placeholder='Age'
           handleChange={(age) => setUserDetails({ ...userDetails, age })}
         />
