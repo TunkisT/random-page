@@ -6,6 +6,8 @@ function Main({ children }) {
   return <S.Main>{children}</S.Main>;
 }
 
-Main.propTypes = {};
+Main.propTypes = {
+  children: PropTypes.node,
+};
 
 export default Main;

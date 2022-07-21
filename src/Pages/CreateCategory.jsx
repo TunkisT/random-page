@@ -31,7 +31,7 @@ function CreateCategory({ getData }) {
           placeholder='Category'
           handleChange={(category) => setCategory(category)}
         />
-        <Button type='submit'>create Category</Button>
+        <Button color='#39ace7' type='submit'>create Category</Button>
       </form>
     </Main>
   );

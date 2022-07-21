@@ -18,6 +18,8 @@ function Container({ children }) {
   );
 }
 
-Container.propTypes = {};
+Container.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Container;

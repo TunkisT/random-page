@@ -6,6 +6,9 @@ function SubCategory({ children, link }) {
   return <S.SubCategory to={link}>{children}</S.SubCategory>;
 }
 
-SubCategory.propTypes = {};
+SubCategory.propTypes = {
+  children: PropTypes.node.isRequired,
+  link: PropTypes.node.isRequired,
+};
 
 export default SubCategory;

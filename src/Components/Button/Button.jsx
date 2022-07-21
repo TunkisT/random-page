@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Button.style';
 
-function Button({ children, type, dataId, test }) {
-  function handleClick() {
-    if (test) {
-      test(dataId);
-    }
-  }
+function Button({ children, color, type, onClick }) {
   return (
-    <S.Button type={type} onClick={handleClick}>
+    <S.Button color={color} type={type} onClick={onClick}>
       {children}
     </S.Button>
   );
@@ -18,8 +13,6 @@ function Button({ children, type, dataId, test }) {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['submit', 'button']).isRequired,
-  test: PropTypes.func,
-  dataId: PropTypes.node,
 };
 
 export default Button;

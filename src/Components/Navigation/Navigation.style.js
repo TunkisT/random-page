@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Navigate = styled(Link)`
-  @media screen and (max-width: 768px) {
-    flex: 1 3rem;
-  }
   background: ${({ color }) => (color ? color : 'grey')};
   border-radius: 0.3rem;
   border: 0;
@@ -18,8 +15,8 @@ export const Navigate = styled(Link)`
   text-decoration: 0;
   text-transform: uppercase;
   :hover {
-    color: white;
     background: grey;
+    color: white;
     transition: 0.5s;
   }
 `;

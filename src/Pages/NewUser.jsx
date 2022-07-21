@@ -91,7 +91,9 @@ function NewUser() {
           placeholder='Category'
           handleChange={(category) => setUserDetails({ ...userDetails, category })}
         />
-        <Button type='submit'>Submit</Button>
+        <Button color='#39ace7' type='submit'>
+          Submit
+        </Button>
       </form>
     </Main>
   );

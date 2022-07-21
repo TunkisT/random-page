@@ -35,7 +35,9 @@ function NewCategory({ title, getSubData }) {
           placeholder='Subcategory'
           handleChange={(subcategory) => setSubcategory(subcategory)}
         />
-        <Button type='submit'>create Subcategory</Button>
+        <Button color='#39ace7' type='submit'>
+          create Subcategory
+        </Button>
       </form>
       {data.length === 0 ? (
         <h2>No users in this category</h2>

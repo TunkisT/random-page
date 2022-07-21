@@ -13,8 +13,10 @@ function Navigation({ link, title, color, children }) {
 }
 
 Navigation.propTypes = {
+  children: PropTypes.node,
   link: PropTypes.node.isRequired,
   title: PropTypes.node.isRequired,
+  color: PropTypes.node,
 };
 
 export default Navigation;
