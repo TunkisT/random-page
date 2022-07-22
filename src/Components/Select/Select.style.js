@@ -12,5 +12,5 @@ export const Select = styled.select`
   padding: 10px 95px;
   text-align: center;
   text-decoration: none;
-  width: 85%;
+  width: 86%;
 `;
